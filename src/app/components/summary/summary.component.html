@@ -1,0 +1,53 @@
+<!-- <p>summary works!</p> -->
+<div class="container p-0 h-100 mx-0">
+  <app-navbar></app-navbar>
+  <div class="row justify-content-between">
+    <div class="col-2 border rounded-right h-auto">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-10">
+      <div id="content">
+        <div class="box">
+          <div class="column">
+            <input type="file" id="fileUpload" hidden />
+            <p>Drag & Drop</p>
+            <p>or</p>
+            <button onclick="document.getElementById('fileUpload').click()">
+              Browse File
+            </button>
+          </div>
+          <div class="column" id="uploadedFiles"></div>
+        </div>
+        <div class="box">
+          <div class="column">
+            <h2>Anticipation</h2>
+            <div class="circle">
+              <div class="inner-circle">70% Positive</div>
+            </div>
+            <p>70%</p>
+          </div>
+          <div class="column">
+            <div class="outcomes">
+              <h2>Outcomes</h2>
+              <p>
+                In addition to its efficiency-boosting features, the Legal Hub
+                App offers a range of functionalities tailored to meet the
+                diverse needs of legal practitioners. Through advanced natural
+                language processing capabilities, it enables quick and accurate
+                legal research, contract analysis, and document drafting.
+                Furthermore, the platform's machine learning algorithms
+                continually refine their understanding of legal nuances,
+                allowing for personalized recommendations and predictive
+                analytics. By harnessing the power of AI, the Legal Hub App
+                empowers lawyers to navigate complex legal landscapes with
+                confidence and agility, ultimately delivering better outcomes
+                for their clients.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
