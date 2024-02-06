@@ -12,8 +12,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { HttpClientModule } from '@angular/common/http';
 import { SummaryComponent } from './components/summary/summary.component';
 import { ChatComponent } from './components/chat/chat.component';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
@@ -26,13 +28,15 @@ import { ChatComponent } from './components/chat/chat.component';
     HomeComponent,
     FooterComponent,
     SummaryComponent,
-    ChatComponent
+    ChatComponent,
+    FilterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CalendarModule
+    CalendarModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

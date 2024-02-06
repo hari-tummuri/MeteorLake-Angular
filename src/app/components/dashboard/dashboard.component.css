@@ -19,3 +19,17 @@
 a{
   text-decoration: none;
 }
+
+button{
+  background-color: #c7c7ff;
+  color: #48489c;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 0px;
+  padding: 5px 14px;
+}
+
+button:hover{
+  background-color: #48489c;
+  color: white;
+}

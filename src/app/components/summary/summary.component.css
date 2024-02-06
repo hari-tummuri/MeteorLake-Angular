@@ -10,6 +10,7 @@
   border: 1px solid #ddd;
   padding: 20px;
   margin: 20px 0;
+  min-height: 300px;
 }
 
 .outcomes {
@@ -92,4 +93,9 @@
   content: "";
   display: table;
   clear: both;
+}
+
+h3{
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold
 }

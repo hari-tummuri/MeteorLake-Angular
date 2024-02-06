@@ -1,5 +1,5 @@
 export interface Cases{
-  caseno : number
+  caseno : string
   lawyer : string
   casetype : string
   judge : string
