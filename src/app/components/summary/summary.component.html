@@ -14,9 +14,28 @@
             <input type="file" id="fileUpload" hidden />
             <p>Drag & Drop</p>
             <p>or</p>
-            <button onclick="document.getElementById('fileUpload').click()">
+            <!-- <button onclick="document.getElementById('fileUpload').click()">
               Browse File
+            </button> -->
+            <button
+              mat-raised-button
+              color="accent"
+              [disabled]="isUploading"
+              (click)="fileInput.click()"
+            >
+              <input
+                hidden
+                (change)="onFileSelected($event)"
+                #fileInput
+                type="file"
+                id="file"
+              />
+              Upload File
             </button>
+            <mat-progress-bar
+              mode="determinate"
+              [value]="uploadProgress"
+            ></mat-progress-bar>
           </div>
           <!-- <div class="column" id="uploadedFiles"></div> -->
         </div>
@@ -24,6 +43,9 @@
           <div class="container">
             <div class="row">
               <h3>Summary</h3>
+            </div>
+            <div class="row">
+              {{ summary }}
             </div>
           </div>
         </div>

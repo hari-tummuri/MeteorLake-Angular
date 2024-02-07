@@ -33,3 +33,7 @@ button:hover{
   background-color: #48489c;
   color: white;
 }
+
+table{
+  height: auto !important;
+}

@@ -4,4 +4,5 @@ export interface Cases{
   casetype : string
   judge : string
   status : string
+  summary : string
 }

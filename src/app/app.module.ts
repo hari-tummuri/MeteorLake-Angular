@@ -2,6 +2,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { NgxExtendedPdfViewerModule } from 'ngx-extended-pdf-viewer';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SigninComponent } from './components/signin/signin.component';
@@ -16,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SummaryComponent } from './components/summary/summary.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { FilterComponent } from './components/filter/filter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,11 @@ import { FilterComponent } from './components/filter/filter.component';
     AppRoutingModule,
     FormsModule,
     CalendarModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatProgressBarModule,
+    MatButtonModule,
+    NgxExtendedPdfViewerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Cases } from 'src/app/Case';
+import { Path } from 'src/app/Path';
 import { CasesService } from 'src/app/services/cases.service';
 
 @Component({
@@ -31,11 +32,11 @@ export class DashboardComponent implements OnInit{
   //   { "caseno": 10456, "lawyer": "Olivia Garcia", "casetype": "Family law", "judge": "Justice Surya Kant", "status": "case dismissed"}
   // ]
 
-  selectedCase : Cases = { "caseno": "", "lawyer": "", "casetype": "", "judge": "", "status": ""}
+  selectedCase : Cases = { "caseno": "", "lawyer": "", "casetype": "", "judge": "", "status": "","summary":""}
   cases :any[] = [];
   filteredData: any[] = [] ;
   filterCriteria: any = {};
-  path : string =''
+  path !: Path
 
   applyFilter() {
     this.filteredData = this.cases.filter((item: { casetype: any; lawyer: any; judge: any; caseno: any; }) => {
@@ -58,9 +59,11 @@ export class DashboardComponent implements OnInit{
       },
     }
     );
+
+    this.openChat(this.path['path'])
   }
 
-  openChat(id : any){
-    this.router.navigate(['/chat',id]);
+  openChat(path : any){
+    this.router.navigate(['/chat',path]);
   }
 }

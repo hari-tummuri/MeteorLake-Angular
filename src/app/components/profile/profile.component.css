@@ -1,7 +1,7 @@
 .container-margin{
     margin-left: 0px !important;
     margin-right: 0px !important;
-    
+
 }
 
 .submt{
@@ -30,5 +30,19 @@
   .enlarge-btn:hover {
     -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
-  transform: scale(1.5); 
+  transform: scale(1.5);
+  }
+
+  button{
+    background-color: #c7c7ff;
+    color: #48489c;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border: 0px;
+    padding: 5px 14px;
+  }
+
+  button:hover{
+    background-color: #48489c;
+    color: white;
   }
