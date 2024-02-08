@@ -9,6 +9,9 @@ import { startOfDay, endOfDay } from 'date-fns';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+
+    casesWon = 50; // This can be any value from 0 to 100
+    casesLost = 7;
     public minDate: Date = new Date ("01/01/2000");
     public maxDate: Date = new Date ("01/01/2999");
     public value: Date = new Date ("05/16/2017");

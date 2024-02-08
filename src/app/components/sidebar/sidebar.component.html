@@ -34,13 +34,23 @@
   <!-- Your navigation items go here -->
   <ul class="nav flex-column">
     <li class="nav-item mt-4">
-      <a class="nav-link sky-button" routerLink="/profile">Profile</a>
+      <a
+        class="nav-link sky-button {{ profclicked }}"
+        (click)="profileClicked()"
+        >Profile</a
+      >
     </li>
     <li class="nav-item mt-4">
-      <a class="nav-link sky-button" routerLink="/dashboard">Dashboard</a>
+      <a
+        class="nav-link sky-button {{ dashClicked }}"
+        (click)="dashboardClicked()"
+        >Dashboard</a
+      >
     </li>
     <li class="nav-item mt-4">
-      <a class="nav-link sky-button" routerLink="/summary">Summary</a>
+      <a class="nav-link sky-button {{ sumClicked }}" (click)="summaryClicked()"
+        >Summary</a
+      >
     </li>
     <!-- Add more navigation items as needed -->
   </ul>

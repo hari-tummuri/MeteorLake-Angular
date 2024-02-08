@@ -1,12 +1,10 @@
 <!-- <p>navbar works!</p> -->
 
-<div class="row justify-content-between nav-width">
+<!-- <div class="row justify-content-between nav-width">
   <nav class="navbar navbar-expand-lg navbar-light bg-light dashboard-width">
     <div class="container-fluid px-5">
-      <!-- Branding on the left -->
       <h1 class="navbar-brand">Legal Research Assistant</h1>
 
-      <!-- Navbar toggle button for small screens -->
       <button
         class="navbar-toggler"
         type="button"
@@ -19,28 +17,10 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Navbar items -->
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <!-- Search bar -->
-          <!-- <li class="nav-item">
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-light" type="submit">Search</button>
-            </form>
-          </li> -->
-
-          <!-- Date -->
           <li class="nav-item">
             <span class="nav-link">
-              <!-- <script>
-                document.write(new Date().toLocaleDateString());
-              </script> -->
               <h6>{{ currentDate | date : "fullDate" }}</h6>
             </span>
           </li>
@@ -48,4 +28,15 @@
       </div>
     </div>
   </nav>
+</div> -->
+
+<div class="row nav-color">
+  <div class="col-9 py-4 px-5">
+    <h1>Legal Research Assistant</h1>
+  </div>
+  <div class="col-3 py-4 my-3">
+    <span class="nav-link">
+      <h6>{{ currentDate | date : "fullDate" }}</h6>
+    </span>
+  </div>
 </div>

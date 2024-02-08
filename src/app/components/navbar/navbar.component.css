@@ -13,3 +13,9 @@ h1{
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-shadow: 0 0 3px rgb(120, 120, 120);
 }
+
+.nav-color{
+  background-color: #48489c !important;
+  color: rgb(219, 219, 219);
+
+}
