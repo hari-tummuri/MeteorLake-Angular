@@ -25,7 +25,8 @@
 
 
 .sky-button{
-  background-color: #c7c7ff;
+  /* background-color: #c7c7ff; */
+  background-color: white;
   color: #48489c;
   margin-bottom: 10px;
   border-radius: 10px;
