@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Agent } from 'src/app/AgentReply';
 import { ChatService } from 'src/app/services/chat.service';
@@ -11,11 +12,22 @@ import { ChatService } from 'src/app/services/chat.service';
 export class ChatComponent implements OnInit {
 
   path !: any;
+  newpath !: any
   agent !: string;
-  constructor(private route: ActivatedRoute, private chatService : ChatService ){}
+  caseno : any = localStorage.getItem('caseno')
+  doc_path : string = "assets/documents/"+this.caseno+".pdf"
+  sumDoc : string = "document"
+  urlSafe !: SafeResourceUrl;
+
+  constructor(private route: ActivatedRoute, private chatService : ChatService, private sanitizer : DomSanitizer ){}
   ngOnInit(){
-    this.path = this.route.snapshot.params['path'];
-    console.log(this.path)
+    // this.path = this.route.snapshot.params['path'];
+    localStorage.setItem('page','chat')
+    console.log(this.doc_path);
+    // this.newpath=this.sanitizer.bypassSecurityTrustResourceUrl(this.doc_path);
+    // (<HTMLIFrameElement>document.getElementById('doc')).src = this.doc_path;
+    // this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.doc_path);
+    this.newpath = this.sanitizer.bypassSecurityTrustResourceUrl(this.doc_path);
   }
 
   messages = [
@@ -42,5 +54,15 @@ export class ChatComponent implements OnInit {
         console.log();
       },
     })
+  }
+
+  viewSummary(){
+    // localStorage.setItem('sumDoc', 'summary')
+    this.sumDoc = 'summary'
+  }
+
+  viewDocument(){
+    // localStorage.setItem('sumDoc','document')
+    this.sumDoc = 'document'
   }
 }

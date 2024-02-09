@@ -31,12 +31,31 @@
 </div> -->
 
 <div class="row nav-color">
-  <div class="col-9 py-4 px-5">
+  <div class="col-7 py-4 px-5">
     <h1>Legal Research Assistant</h1>
   </div>
-  <div class="col-3 py-4 my-3">
+  <div class="col-2 py-4 my-3">
     <span class="nav-link">
       <h6>{{ currentDate | date : "fullDate" }}</h6>
     </span>
+  </div>
+  <div class="col-3 py-4 my-3">
+    <button
+      type="submit"
+      class="home-button mx-1"
+      (click)="goToHome()"
+      *ngIf="homeStatus"
+    >
+      Home
+    </button>
+    <button type="submit" class="logout-button" (click)="logout()">
+      Logout
+    </button>
+    <img
+      src="{{ profileImage }}"
+      alt=""
+      style="height: 60px"
+      class="round-image"
+    />
   </div>
 </div>

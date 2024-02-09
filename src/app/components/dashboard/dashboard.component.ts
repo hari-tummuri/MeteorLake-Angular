@@ -14,6 +14,7 @@ export class DashboardComponent implements OnInit{
   // currentDate: string = "5 February 2024";
   constructor (private caseService : CasesService, private router : Router){}
   ngOnInit(){
+    localStorage.setItem('page','dashboard')
     this.filteredData =this.caseService.getCases()
     this.cases  = this.caseService.getCases()
     console.log(this.filteredData)
@@ -36,7 +37,8 @@ export class DashboardComponent implements OnInit{
   cases :any[] = [];
   filteredData: any[] = [] ;
   filterCriteria: any = {};
-  path !: Path
+  // path !: Path
+  path : any = "assets/documents/Sample_doc.pdf"
 
   applyFilter() {
     this.filteredData = this.cases.filter((item: { casetype: any; lawyer: any; judge: any; caseno: any; }) => {
@@ -60,10 +62,15 @@ export class DashboardComponent implements OnInit{
     }
     );
 
-    this.openChat(this.path['path'])
+    // this.openChat(this.path['path'])
   }
 
-  openChat(path : any){
-    this.router.navigate(['/chat',path]);
+  // openChat(path : any){
+  //   this.router.navigate(['/chat',path]);
+  // }
+  openChat(caseno : any){
+    localStorage.setItem('caseno', caseno)
+    localStorage.setItem('doc_path',"assets/documents/Sample_doc.pdf")
+    this.router.navigate(['/chat'])
   }
 }

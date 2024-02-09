@@ -91,3 +91,22 @@
 /* .nav-border{
   border: 2px;
 } */
+
+full-calendar{
+  background-color: #ffffff;
+  padding: 5px;
+  border-radius: 10px;
+
+}
+
+.content-pad{
+  padding-left: 35px;
+  padding-right: 0px;
+  /* color: black; */
+}
+
+/* .fc-event {
+  background-color: yellow;
+  color: black;
+  border-color: black;
+} */

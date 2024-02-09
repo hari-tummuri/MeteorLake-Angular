@@ -1,20 +1,19 @@
 <app-navbar></app-navbar>
 <div class="container p-0 mx-0">
-  <div class="row justify-content-between">
+  <div class="row">
     <div class="col-2 col-2 border rounded-right">
       <app-sidebar></app-sidebar>
     </div>
-    <div class="col-10 pt-5 px-5">
+    <div class="col-10 pt-5 content-pad">
       <div class="row">
-        <div class="col-3">
-          <img
-            class="rounded-circle h-75"
-            src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
-            alt=""
-          />
+        <div class="col-3" style="height: 250px; width: 250px">
+          <img class="rounded-circle h-75" src="{{ profileImage }}" alt="" />
         </div>
-        <div class="col-5">
-          <div class="row"><h3>Welcome</h3></div>
+        <div class="col-5 d-flex flex-column justify-content-center">
+          <!-- <div class="row"></div> -->
+          <div class="row">
+            <h3>Welcome, {{ username }}</h3>
+          </div>
           <div class="row"><h1>Profile management</h1></div>
           <p>
             Law is the essential foundation of stability and order both within
@@ -22,7 +21,7 @@
           </p>
           <div class="row"></div>
         </div>
-        <div class="col-4">
+        <div class="col-4 p-0">
           <!-- <ejs-calendar
             id="calendar"
             [value]="value"
@@ -35,6 +34,7 @@
             src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
             alt=""
           /> -->
+          <full-calendar [options]="calendarOptions"></full-calendar>
         </div>
       </div>
 
@@ -47,9 +47,9 @@
           <div class="card card-won card-enlarge">
             <div class="card-body">
               <h6 class="card-title">Cases won</h6>
-              <h4 class="card-subtitle mb-2">43</h4>
+              <h4 class="card-subtitle mb-2">{{ won }}</h4>
               <div class="progress-bar">
-                <div class="progress" [style.width.%]="casesWon"></div>
+                <div class="progress" [style.width.%]="won"></div>
               </div>
             </div>
           </div>
@@ -58,9 +58,9 @@
           <div class="card card-loss card-enlarge">
             <div class="card-body">
               <h6 class="card-title">Cases loss</h6>
-              <h4 class="card-subtitle mb-2">07</h4>
+              <h4 class="card-subtitle mb-2">{{ loss }}</h4>
               <div class="progress-bar">
-                <div class="progress" [style.width.%]="casesLost"></div>
+                <div class="progress" [style.width.%]="loss"></div>
               </div>
             </div>
           </div>
@@ -73,9 +73,9 @@
           <div class="card card-progress card-enlarge">
             <div class="card-body">
               <h6 class="card-title">In Progress</h6>
-              <h4 class="card-subtitle mb-2">10</h4>
+              <h4 class="card-subtitle mb-2">{{ inProgress }}</h4>
               <div class="progress-bar">
-                <div class="progress" [style.width.%]="casesLost"></div>
+                <div class="progress" [style.width.%]="inProgress"></div>
               </div>
             </div>
           </div>
@@ -144,7 +144,7 @@
             <tr>
               <th scope="row">
                 <!-- <button type="submit" (click)="getPDF(case.caseno)"> -->
-                <button type="submit">1024</button>
+                <button type="submit" (click)="openChat(1024)">1024</button>
               </th>
               <!-- <td>Legal overview</td> -->
               <td>John Doe</td>
@@ -156,7 +156,7 @@
             <tr>
               <th scope="row">
                 <!-- <button type="submit" (click)="getPDF(case.caseno)"> -->
-                <button type="submit">2728</button>
+                <button type="submit" (click)="openChat(2728)">2728</button>
               </th>
               <!-- <td>Legal overview</td> -->
               <td>Jane smith</td>
@@ -168,7 +168,7 @@
             <tr>
               <th scope="row">
                 <!-- <button type="submit" (click)="getPDF(case.caseno)"> -->
-                <button type="submit">5871</button>
+                <button type="submit" (click)="openChat(5871)">5871</button>
               </th>
               <!-- <td>Legal overview</td> -->
               <td>James Taylor</td>

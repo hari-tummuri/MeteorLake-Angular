@@ -92,7 +92,7 @@
         <tbody>
           <tr *ngFor="let case of filteredData">
             <th scope="row">
-              <button type="submit" (click)="getPDF(case.caseno)">
+              <button type="submit" (click)="openChat(case.caseno)">
                 {{ case.caseno }}
               </button>
             </th>
