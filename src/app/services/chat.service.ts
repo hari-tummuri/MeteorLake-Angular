@@ -9,6 +9,6 @@ export class ChatService {
   constructor(private http : HttpClient) { }
 
   getReply(question : any){
-    return this.http.get(`http://127.0.0.1:8080/api/question=${question}`)
+    return this.http.get(`http://127.0.0.1:8080/chatbot/1?query=${question}`)
   }
 }

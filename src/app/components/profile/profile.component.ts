@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 // import { Component } from '@angular/core';
 import { startOfDay, endOfDay } from 'date-fns';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 // import { CalendarEvent } from 'mdb-calendar';
 
 @Component({
@@ -9,6 +10,10 @@ import { startOfDay, endOfDay } from 'date-fns';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
+
+  constructor(){
+    // sideBar.profileClicked()
+  }
 
     casesWon = 50; // This can be any value from 0 to 100
     casesLost = 7;

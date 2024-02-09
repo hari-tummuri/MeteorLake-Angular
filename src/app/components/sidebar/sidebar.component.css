@@ -25,30 +25,34 @@
 
 
 .sky-button{
-  /* background-color: #c7c7ff; */
-  background-color: white;
-  color: #48489c;
+  background-color: #c7c7ff;
+  /* background-color: white; */
+  /* color: #48489c; */
+  color: #3f51b5;
+  font-size: 15px;
   margin-bottom: 10px;
   border-radius: 10px;
+  /* width: 148%; */
 }
 
 .sky-button:hover{
-  background-color: #48489c;
+  /* background-color: #48489c; */
+  background-color: #3f51b5;
   color: white;
 }
 
 .profileClicked{
-  background-color: #48489c;
+  background-color: #3f51b5;
   color: white;
 }
 
 .dashboardClicked{
-  background-color: #48489c;
+  background-color: #3f51b5;
   color: white;
 }
 
 .summaryClicked{
-  background-color: #48489c;
+  background-color: #3f51b5;
   color: white;
 }
 
