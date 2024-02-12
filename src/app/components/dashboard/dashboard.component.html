@@ -1,0 +1,118 @@
+<app-navbar></app-navbar>
+<div class="container p-0 container-margin h-100">
+  <!-- <div class="row">
+    <app-navbar></app-navbar>
+  </div> -->
+  <div class="row justify-content-between">
+    <div class="col-2 border rounded-right h-auto">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-10">
+      <!-- Your content goes here -->
+      <div class="container">
+        <div class="row">
+          <!-- Left column with some content -->
+          <div
+            class="col-md-6 d-flex flex-column justify-content-center align-items-center"
+          >
+            <h3 class="welcome">Welcome to</h3>
+            <h2>Case management</h2>
+            <p>
+              At his best, man is the noblest of all animals; separated from law
+              and justice he is the worst.
+            </p>
+          </div>
+          <!-- Right column with an image -->
+          <div class="col-md-6 p-5">
+            <img
+              src="https://github.com/hari-tummuri/MyLivaImages/assets/104126503/8b43d63a-b4e3-4cca-8101-7429446fe856"
+              height="300px"
+              width="300px"
+              alt="Image"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center my-4">
+          <div class="col-2 mx-3">
+            <label for="caseno">Case No:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="caseNo"
+              [(ngModel)]="filterCriteria.caseno"
+            />
+          </div>
+          <div class="col-2 mx-3">
+            <label for="caseType">Case Type:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="caseType"
+              [(ngModel)]="filterCriteria.casetype"
+            />
+          </div>
+          <div class="col-2 mx-3">
+            <label for="lawyer">Lawyer:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="lawyer"
+              [(ngModel)]="filterCriteria.lawyer"
+            />
+          </div>
+          <div class="col-2 mx-3">
+            <label for="judge">Judge:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="judge"
+              [(ngModel)]="filterCriteria.judge"
+            />
+          </div>
+          <div class="col-2 mx-3 align-self-end">
+            <button (click)="applyFilter()">Apply Filter</button>
+          </div>
+        </div>
+      </div>
+      <table class="table px-5">
+        <thead>
+          <tr>
+            <th scope="col">Case no</th>
+            <th scope="col">Lawyer</th>
+            <!-- <th scope="col">Prosecutor</th> -->
+            <th scope="col">Case Type</th>
+            <th scope="col">Status</th>
+            <th scope="col">Judge</th>
+            <th scope="col">Legal overview</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let case of filteredData">
+            <th scope="row">
+              <button type="submit" (click)="openChat(case.caseno)">
+                {{ case.caseno }}
+              </button>
+            </th>
+            <!-- <td>Legal overview</td> -->
+            <td>{{ case.lawyer }}</td>
+            <td>{{ case.casetype }}</td>
+            <td>{{ case.status }}</td>
+            <td>{{ case.judge }}</td>
+            <td>{{ case.summary | slice : 0 : 50 }}...</td>
+            <!-- <th scope="col">
+              <a href="">{{ case.summary | slice : 0 : 15 }}</a>
+            </th> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <app-footer></app-footer>
+  </div>
+</div>
+
+<!-- <app-footer></app-footer> -->
