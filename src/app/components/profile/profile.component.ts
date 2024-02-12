@@ -4,6 +4,10 @@ import { CalendarOptions,EventApi } from '@fullcalendar/core';
 import { Calendar } from '@fullcalendar/core';
 // import { EventRenderInfo } from '@fullcalendar/common';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import * as moment from 'moment';
+
+
 
 // import { Component } from '@angular/core';
 import { startOfDay, endOfDay } from 'date-fns';
@@ -25,6 +29,11 @@ export class ProfileComponent implements OnInit{
   loss : any = localStorage.getItem('loss')
   inProgress : any = localStorage.getItem('inProgress')
   profileImage : any = localStorage.getItem('profileimage')
+
+  title !: any
+  date !: any
+  startTime !: any
+  endTime !: any
 
   constructor(private route : ActivatedRoute, private router:Router,private signinService : SigninService){
     // sideBar.profileClicked()
@@ -55,18 +64,33 @@ export class ProfileComponent implements OnInit{
 
     calendarOptions: CalendarOptions = {
       initialView: 'dayGridMonth',
-      plugins: [dayGridPlugin],
+      plugins: [dayGridPlugin, timeGridPlugin],
       eventClick: this.handleDateClick.bind(this), // MUST ensure `this` context is maintained
       events: [
-        { title: 'civil case to go court', date: '2024-02-09' },
-        { title: 'Meet with client', date: '2024-02-25' },
-        {title: 'Meet with client', date:'2024-02-14'}
+        { title: 'civil case to go court', start: '2024-02-12T10:00:00', end: '2024-02-12T11:00:00' },
+        { title: 'Meet with client', start: '2024-02-19T13:30:00', end: '2024-02-19T14:30:00' },
+        {title: "Need to file counter to joe's money laundering case", start: '2024-02-16T10:00:00', end: '2024-02-16T11:00:00'},
+        {title: 'Notery to be handover to client', start: '2024-02-14T11:00:00', end: '2024-02-14T12:30:00'}
       ]
     };
 
     handleDateClick(arg: any) {
-      alert('Event: ' + arg['event']['_def']['title'])
+      const startTime = moment(arg.event.start).format('h:mm A');
+      const endTime = moment(arg.event.end).format('h:mm A');
+      const date = moment(arg.event.start).format('DD-MM-YYYY')
+      // alert('Event: ' + arg['event']['_def']['title'] + '\n Time : '+ startTime)
+      this.title = arg['event']['_def']['title']
+      this.startTime = startTime
+      this.endTime = endTime
+      this.date = date
       console.log(arg)
+    }
+
+    clearValues(){
+      this.title = ''
+      this.startTime = ''
+      this.endTime = ''
+      this.date = ''
     }
     // events: CalendarEvent[] = [
     //   {
