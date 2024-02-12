@@ -34,7 +34,11 @@
             src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
             alt=""
           /> -->
-          <full-calendar [options]="calendarOptions"></full-calendar>
+          <full-calendar
+            [options]="calendarOptions"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          ></full-calendar>
         </div>
       </div>
 
@@ -179,6 +183,51 @@
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+    *ngIf="title"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Event Details</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+            (click)="clearValues()"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p><span style="font-weight: bold">Event : </span> {{ title }}</p>
+          <p><span style="font-weight: bold">Date : </span> {{ date }}</p>
+          <p>
+            <span style="font-weight: bold">Start Time : </span> {{ startTime }}
+          </p>
+          <p>
+            <span style="font-weight: bold">End Time : </span> {{ endTime }}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+            (click)="clearValues()"
+          >
+            Close
+          </button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
       </div>
     </div>
   </div>
