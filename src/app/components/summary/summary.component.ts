@@ -1,3 +1,4 @@
+// import { Data } from './../../SummaryData';
 import { Component } from '@angular/core';
 import { CasesService } from 'src/app/services/cases.service';
 import { SummaryService } from 'src/app/services/summary.service';
@@ -12,6 +13,8 @@ export class SummaryComponent {
   uploadProgress = 0;
   selectedFilePath : string = 'D:\\LegalDocuments\\'
   summary !: string
+  // data !: Data
+  formData = new FormData()
 
   constructor(private summaryService : SummaryService, private caseService : CasesService){}
 
@@ -21,6 +24,8 @@ export class SummaryComponent {
     if (file) {
       this.isUploading = true;
       this.uploadProgress = 20;  // Update as per your requirement
+      // const formData = new FormData()
+        this.formData.append('file',file)
 
       // Simulate a file upload
       setTimeout(() => {
@@ -31,13 +36,16 @@ export class SummaryComponent {
       }, 1000);
     }
 
-    this.getSummaryStatic(this.selectedFilePath)
+    this.getSummary(this.formData)
   }
 
-  getSummary(path : any){
-    this.summaryService.getSummaryByPath(path).subscribe({
+  getSummary(formdata : FormData){
+    // this.data ={ doc_path : path }
+    this.summaryService.getSummaryByPath(formdata).subscribe({
       next: (response: any) => {
         this.summary = response
+        console.log(this.summary);
+
       },
       error: (error: any) => {
         console.log();
