@@ -59,8 +59,8 @@ export class ProfileComponent implements OnInit{
       eventClick: this.handleDateClick.bind(this), // MUST ensure `this` context is maintained
       events: [
         { title: 'civil case to go court', date: '2024-02-09' },
-        { title: 'event 2', date: '2019-02-10' },
-        {title: 'event 3', date:'2024-02-14'}
+        { title: 'Meet with client', date: '2024-02-25' },
+        {title: 'Meet with client', date:'2024-02-14'}
       ]
     };
 

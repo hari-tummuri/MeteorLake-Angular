@@ -101,7 +101,10 @@
             <td>{{ case.casetype }}</td>
             <td>{{ case.status }}</td>
             <td>{{ case.judge }}</td>
-            <th scope="col"><a href="">Legal overview</a></th>
+            <td>{{ case.summary | slice : 0 : 50 }}...</td>
+            <!-- <th scope="col">
+              <a href="">{{ case.summary | slice : 0 : 15 }}</a>
+            </th> -->
           </tr>
         </tbody>
       </table>
