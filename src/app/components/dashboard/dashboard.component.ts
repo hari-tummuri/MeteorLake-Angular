@@ -43,10 +43,10 @@ export class DashboardComponent implements OnInit{
   applyFilter() {
     this.filteredData = this.cases.filter((item: { casetype: any; lawyer: any; judge: any; caseno: any; }) => {
       return (
-        (!this.filterCriteria.casetype || item.casetype === this.filterCriteria.casetype) &&
-        (!this.filterCriteria.lawyer || item.lawyer === this.filterCriteria.lawyer) &&
-        (!this.filterCriteria.judge || item.judge === this.filterCriteria.judge) &&
-        (!this.filterCriteria.caseno || item.caseno === this.filterCriteria.caseno)
+        (!this.filterCriteria.casetype || item.casetype.toLowerCase().includes(this.filterCriteria.casetype.toLowerCase().trim())) &&
+        (!this.filterCriteria.lawyer || item.lawyer.toLowerCase().includes(this.filterCriteria.lawyer.toLowerCase().trim())) &&
+        (!this.filterCriteria.judge || item.judge.toLowerCase().includes(this.filterCriteria.judge.toLowerCase().trim())) &&
+        (!this.filterCriteria.caseno || item.caseno.toLowerCase().includes(this.filterCriteria.caseno.toLowerCase().trim()))
       );
     });
   }
