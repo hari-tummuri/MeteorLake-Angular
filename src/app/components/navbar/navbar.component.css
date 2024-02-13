@@ -64,3 +64,7 @@ h1{
 .round-image{
   border-radius: 50px !important;
 }
+
+.headerPad{
+  padding-left: 60px !important;
+}
