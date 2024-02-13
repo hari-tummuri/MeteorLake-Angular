@@ -6,7 +6,7 @@ import { User } from '../User';
 })
 export class SigninService {
 
-  users : User[] = [{"email" : "adarsh.talinki@wipro.com", "password": "Adarsh123", "profileName":"Adarsh T R", "profileimage": "https://photogov-com.akamaized.net/examples/original/US.webp", "won": 50, "loss": 10, "inProgress":7 },
+  users : User[] = [{"email" : "naveen@gmail.com", "password": "Demo123", "profileName":"Naveen", "profileimage": "https://www.asterhospitals.in/sites/default/files/2023-05/Dr%20Naveen%20Chandra%20for%20Web.jpg", "won": 50, "loss": 10, "inProgress":7 },
   {"email" : "abhijeet.kadam@wipro.com", "password": "Abhijeet123", "profileName":"Abhijeet", "profileimage": "https://media.istockphoto.com/id/503040171/photo/middle-eastern-businessman-portrait.jpg?s=612x612&w=0&k=20&c=7t6c_HQHfUZNgrVtR-G1rQpJAMaCbFsuxppDRKBnXDw=", "won": 55, "loss": 11, "inProgress":15 }
 ]
   constructor() { }
