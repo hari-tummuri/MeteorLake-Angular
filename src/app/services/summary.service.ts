@@ -14,7 +14,7 @@ export class SummaryService {
   //   return
   // }
 
-  getSummaryByPath(path: any) {
-    return this.http.get(`http://127.0.0.1:8080/apiCaseId?caseId=${path}`);
+  getSummaryByPath(formdata : FormData) {
+    return this.http.post(`http://127.0.0.1:4000/summary`, formdata);
   }
 }
