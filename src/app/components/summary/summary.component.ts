@@ -15,6 +15,8 @@ export class SummaryComponent {
   summary !: string
   // data !: Data
   formData = new FormData()
+  loading : boolean = false
+  file !: any
 
   constructor(private summaryService : SummaryService, private caseService : CasesService){}
 
@@ -22,6 +24,7 @@ export class SummaryComponent {
     const file: File = event.target.files[0];
 
     if (file) {
+
       this.isUploading = true;
       this.uploadProgress = 20;  // Update as per your requirement
       // const formData = new FormData()
@@ -31,7 +34,9 @@ export class SummaryComponent {
       setTimeout(() => {
         this.isUploading = false;
         this.uploadProgress = 0;
-        this.selectedFilePath += file.name;  // Store file path
+        this.selectedFilePath += file.name;
+        this.file = file.name  // Store file path
+        this.loading = true
         console.log(this.selectedFilePath);
       }, 1000);
     }
@@ -43,6 +48,7 @@ export class SummaryComponent {
     // this.data ={ doc_path : path }
     this.summaryService.getSummaryByPath(formdata).subscribe({
       next: (response: any) => {
+        this.loading = false
         this.summary = response
         console.log(this.summary);
 
