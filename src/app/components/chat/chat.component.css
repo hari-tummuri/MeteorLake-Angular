@@ -36,3 +36,85 @@ button:hover{
   margin-bottom: 10px;
 }
 
+
+/* Jumping balls for loader demo*/
+/*
+.border-secondary,
+ .loader-demo-box {
+     border-color: #a3a4a5 !important
+ }
+
+ .rounded,
+ .loader-demo-box {
+     border-radius: 0.25rem !important
+ }
+
+
+
+ .jumping-dots-loader {
+     border-radius: 100%;
+     position: relative;
+     margin: 0 auto
+ }
+
+ .jumping-dots-loader span {
+     display: inline-block;
+     width: 10px;
+     height: 10px;
+     border-radius: 100%;
+     background-color: #5656b2;
+     margin: 3px
+ }
+
+ .jumping-dots-loader span:nth-child(1) {
+     animation: bounce 1s ease-in-out infinite
+ }
+
+ .jumping-dots-loader span:nth-child(2) {
+     animation: bounce 1s ease-in-out 0.33s infinite
+ }
+
+ .jumping-dots-loader span:nth-child(3) {
+     animation: bounce 1s ease-in-out 0.66s infinite
+ }
+
+ @keyframes bounce {
+
+     0%,
+     75%,
+     100% {
+         -webkit-transform: translateY(4px);
+         -ms-transform: translateY(4px);
+         -o-transform: translateY(4px);
+         transform: translateY(4px)
+     }
+
+     25% {
+         -webkit-transform: translateY(-4px);
+         -ms-transform: translateY(-4px);
+         -o-transform: translateY(-4px);
+         transform: translateY(-4px)
+     }
+ } */
+
+
+/* typing animation from css-loaders.com */
+
+.loader {
+  width: 40px;
+  aspect-ratio: 2;
+  --_g: no-repeat radial-gradient(circle closest-side,#5656b2 90%,#0000);
+  background:
+    var(--_g) 0%   50%,
+    var(--_g) 50%  50%,
+    var(--_g) 100% 50%;
+  background-size: calc(100%/3) 50%;
+  animation: l3 1s infinite linear;
+}
+@keyframes l3 {
+    20%{background-position:0%   0%, 50%  50%,100%  50%}
+    40%{background-position:0% 100%, 50%   0%,100%  50%}
+    60%{background-position:0%  50%, 50% 100%,100%   0%}
+    80%{background-position:0%  50%, 50%  50%,100% 100%}
+}
+
