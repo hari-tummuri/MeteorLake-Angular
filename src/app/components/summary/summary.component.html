@@ -1,7 +1,7 @@
 <!-- <p>summary works!</p> -->
 <app-navbar></app-navbar>
 <div class="container p-0 mx-0">
-  <div class="row justify-content-between">
+  <div class="row justify-content-between min-height">
     <div class="col-2 border rounded-right h-auto">
       <app-sidebar></app-sidebar>
     </div>
@@ -17,29 +17,41 @@
             <!-- <button onclick="document.getElementById('fileUpload').click()">
               Browse File
             </button> -->
-            <button
-              mat-raised-button
-              color="accent"
-              [disabled]="isUploading"
-              (click)="fileInput.click()"
-            >
-              <input
-                hidden
-                (change)="onFileSelected($event)"
-                #fileInput
-                type="file"
-                id="file"
-              />
-              Upload File
-            </button>
-            <mat-progress-bar
-              mode="determinate"
-              [value]="uploadProgress"
-            ></mat-progress-bar>
+            <div class="row">
+              <div class="col-8">
+                <button
+                  mat-raised-button
+                  color="accent"
+                  [disabled]="isUploading"
+                  (click)="fileInput.click()"
+                >
+                  <input
+                    hidden
+                    (change)="onFileSelected($event)"
+                    #fileInput
+                    type="file"
+                    id="file"
+                  />
+                  Upload File
+                </button>
+                <mat-progress-bar
+                  mode="determinate"
+                  [value]="uploadProgress"
+                ></mat-progress-bar>
+              </div>
+              <div class="col-4">
+                <p class="d-flex align-items-end">{{ file }}</p>
+              </div>
+            </div>
           </div>
+
           <!-- <div class="column" id="uploadedFiles"></div> -->
         </div>
-        <div class="box">
+        <div class="d-flex align-items-center" *ngIf="loading == true">
+          <h3>Generating summary&nbsp;</h3>
+          <div class="loader"></div>
+        </div>
+        <div class="box" *ngIf="loading == false">
           <div class="container">
             <div class="row">
               <h3>Summary</h3>
