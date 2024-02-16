@@ -25,19 +25,20 @@ export class SigninComponent  {
 //   alert("hi")
 // }
 
-signIn(){
-  this.user = this.signInService.getUserByEmailAndPsssword(this.email, this.password)
-  // console.log(this.user)
-  localStorage.setItem('email', this.user.email);
-  localStorage.setItem('username', this.user.profileName);
-  localStorage.setItem('password',this.user.password)
-  localStorage.setItem('won',this.user.won)
-  localStorage.setItem('loss',this.user.loss)
-  localStorage.setItem('inProgress',this.user.inProgress)
-  localStorage.setItem('profileimage',this.user.profileimage)
-  this.after_submit()
-}
+  signIn(){
+    this.user = this.signInService.getUserByEmailAndPsssword(this.email, this.password)
+    // console.log(this.user)
+    localStorage.setItem('email', this.user.email);
+    localStorage.setItem('username', this.user.profileName);
+    localStorage.setItem('password',this.user.password)
+    localStorage.setItem('won',this.user.won)
+    localStorage.setItem('loss',this.user.loss)
+    localStorage.setItem('inProgress',this.user.inProgress)
+    localStorage.setItem('profileimage',this.user.profileimage)
+    this.after_submit()
+  }
   after_submit(): void{
     this.router.navigate(['/profile'])
   }
+
 }
