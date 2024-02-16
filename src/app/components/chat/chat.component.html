@@ -1,4 +1,79 @@
-<!-- <p>chat works!</p> -->
+<!-- <app-navbar></app-navbar>
+<div class="container p-0 mx-0">
+  <div class="row justify-content-between my-5">
+    <div class="col-8 px-5" *ngIf="sumDoc == 'document'">
+      <object
+        [data]="newpath"
+        type="application/pdf"
+        width="100%"
+        height="600px"
+      >
+        <iframe
+          [src]="newpath"
+          width="100%"
+          height="600px"
+          id="doc"
+          style="border: none"
+        >
+          This browser does not support PDFs. Please download the PDF to view
+          it:
+          <a [href]="newpath">Download PDF</a>
+        </iframe>
+      </object>
+      <div class="row my-3 w-50 m-auto">
+        <button
+          type="submit"
+          class=""
+          (click)="viewSummary()"
+          *ngIf="sumDoc == 'document'"
+        >
+          Get summary
+        </button>
+      </div>
+    </div>
+    <div class="col-8 px-5" *ngIf="sumDoc == 'summary'">
+      <h2>Summary</h2>
+      <p>
+        {{ summary }}
+      </p>
+      <div class="row my-3 w-50 m-auto">
+        <button
+          type="submit"
+          class=""
+          (click)="viewDocument()"
+          *ngIf="sumDoc == 'summary'"
+        >
+          View Document
+        </button>
+      </div>
+    </div>
+    <div class="col-4">
+      <h3 style="padding-left: 60px">Chat with the document</h3>
+      <div class="chat-container">
+        <div class="chat-history">
+          <div *ngFor="let message of messages" class="message">
+            <p>
+              <strong>{{ message.user }}</strong
+              >: {{ message.text }}
+            </p>
+          </div>
+          <div class="d-flex align-items-center" *ngIf="loading == true">
+            <strong>Agent : &nbsp;</strong>
+            <div class="loader"></div>
+          </div>
+        </div>
+        <input
+          [(ngModel)]="newMessage"
+          (keyup.enter)="sendMessage()"
+          placeholder="Type your message here..."
+          class="form-control"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer> -->
+
 <app-navbar></app-navbar>
 <div class="container p-0 mx-0">
   <!-- <app-navbar></app-navbar> -->
@@ -41,7 +116,7 @@
       <div class="row my-3 w-50 m-auto">
         <button
           type="submit"
-          class=""
+          class="submitt"
           (click)="viewSummary()"
           *ngIf="sumDoc == 'document'"
         >
@@ -61,7 +136,7 @@
       <div class="row my-3 w-50 m-auto">
         <button
           type="submit"
-          class=""
+          class="submitt"
           (click)="viewDocument()"
           *ngIf="sumDoc == 'summary'"
         >
@@ -69,43 +144,42 @@
         </button>
       </div>
     </div>
-    <div class="col-4">
-      <h3 style="padding-left: 60px">Chat with the document</h3>
+    <!-- <div class="col-1"></div> -->
+    <div class="col-4 chaat">
+      <h3 style="padding: 15px" class="Chattop">Chat with the document</h3>
       <div class="chat-container">
         <div class="chat-history">
           <div *ngFor="let message of messages" class="message">
-            <p>
+            <p class="para">
               <strong>{{ message.user }}</strong
               >: {{ message.text }}
             </p>
 
             <!-- <p @spin>hari</p> -->
             <!-- <p *ngIf="message.user == 'User'">
-                <strong>{{ message.user }}</strong
-                >: {{ message.text }}
-              </p> -->
+                    <strong>{{ message.user }}</strong
+                    >: {{ message.text }}
+                  </p> -->
           </div>
-          <div class="d-flex align-items-center" *ngIf="loading == true">
-            <strong>Agent : &nbsp;</strong>
+
+          <div
+            class="d-flex align-items-center agent message para"
+            *ngIf="loading == true"
+          >
+            <strong style="color: white">Agent : &nbsp;</strong>
             <div class="loader"></div>
-            <!-- <div class="col-md-4 col-sm-6 grid-margin stretch-card">
-              <div class="loader-demo-box">
-                <div class="jumping-dots-loader">
-                  <span></span> <span></span> <span></span>
-                </div>
-              </div>
-            </div> -->
-            <!-- <div class="spinner-grow spinner-grow-sm text-primary mx-1"></div>
-            <div class="spinner-grow spinner-grow-sm text-warning mx-1"></div>
-            <div class="spinner-grow spinner-grow-sm text-success mx-1"></div> -->
           </div>
         </div>
-        <input
-          [(ngModel)]="newMessage"
-          (keyup.enter)="sendMessage()"
-          placeholder="Type your message here..."
-          class="form-control"
-        />
+
+        <div class="input-with-mic">
+          <input
+            [(ngModel)]="newMessage"
+            (keyup.enter)="sendMessage()"
+            class="inpuut"
+            placeholder="Type your query here"
+          />
+          <!-- <i class="mic-icon fas fa-microphone"></i> -->
+        </div>
       </div>
     </div>
   </div>
