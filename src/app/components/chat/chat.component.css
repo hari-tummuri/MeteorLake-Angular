@@ -1,4 +1,4 @@
-.text-box{
+text-box{
   border: 2px !important;
   border-radius: 15px !important;
   border-color: black !important;
@@ -20,65 +20,118 @@ button:hover{
 }
 
 .chat-container {
-  width: 300px;
-  margin: 0 auto;
+  width: 423px;
+  height: 553px;
+  background-color: #7e7ea0;
+  color: white;
+  /* margin-top: 10px; */
+  border-radius: 10px 40px 10px 40px;
+
 }
 
 .chat-history {
-  height: 500px;
+  /* margin-left: 37px; */
+  /* margin-top: 37px; */
+
+  /* padding-top: 25px; */
+  /* padding: auto; */
+  /* padding: 5% 0%; */
+  margin: 0% 5%;
+  height: 473px;
+  width: 350px;
   overflow-y: scroll;
+  /* border: 1px solid #ccc; */
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
+  /* background-color: #55658F; */
+  border-radius: 10px 0 0 10px;
+
+}
+.chat-history2 {
+  /* margin-left: 37px; */
+  margin-top: 25px;
+
+  /* padding-top: 25px; */
+  /* padding: auto; */
+  height: 500px;
+  width: 350px;
+  /* overflow-y: scroll; */
   border: 1px solid #ccc;
-  padding: 10px;
-  margin-bottom: 10px;
+  /* padding: 10px; */
+  /* margin-bottom: 10px; */
+  /* background-color: #dcdddf; */
+  border-radius: 10px;
+
+
+}
+.inpuut {
+  background-color: #1D1D46;
+  margin: 20px;
+  width: 80%;
+  padding: 2%;
+  /* height: 50%; */
+  color: whitesmoke;
+  border: 1px solid #ccc;
+  /* border: none; */
+  border-radius: 10px;
+  margin-left: 35px;
+}
+.inpuut:hover {
+  background-color: #2d2d51;
+  /* margin: 20px; */
+  /* width: 380px; */
+  color: whitesmoke;
+
 }
 
 .message {
-  margin-bottom: 10px;
+  /* margin-top: auto; */
+  /* padding-bottom: 100px; */
 }
 
 
 /* Jumping balls for loader demo*/
 /*
 .border-secondary,
- .loader-demo-box {
+.loader-demo-box {
      border-color: #a3a4a5 !important
- }
+}
 
- .rounded,
- .loader-demo-box {
+.rounded,
+.loader-demo-box {
      border-radius: 0.25rem !important
- }
+}
 
 
 
- .jumping-dots-loader {
+.jumping-dots-loader {
      border-radius: 100%;
      position: relative;
      margin: 0 auto
- }
+}
 
- .jumping-dots-loader span {
+.jumping-dots-loader span {
      display: inline-block;
      width: 10px;
      height: 10px;
      border-radius: 100%;
      background-color: #5656b2;
      margin: 3px
- }
+}
 
- .jumping-dots-loader span:nth-child(1) {
+.jumping-dots-loader span:nth-child(1) {
      animation: bounce 1s ease-in-out infinite
- }
+}
 
- .jumping-dots-loader span:nth-child(2) {
+.jumping-dots-loader span:nth-child(2) {
      animation: bounce 1s ease-in-out 0.33s infinite
- }
+}
 
- .jumping-dots-loader span:nth-child(3) {
+.jumping-dots-loader span:nth-child(3) {
      animation: bounce 1s ease-in-out 0.66s infinite
- }
+}
 
- @keyframes bounce {
+@keyframes bounce {
 
      0%,
      75%,
@@ -95,15 +148,39 @@ button:hover{
          -o-transform: translateY(-4px);
          transform: translateY(-4px)
      }
- } */
+} */
 
 
 /* typing animation from css-loaders.com */
+.submitt {
+  background-color: #4446bd;
+  color: #ffffff;
+}
+.submitt:hover{
+  background-color: #2d2d6a;
+  color: #ffffff;
+}
+.para {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #1D1D46;
+  border-radius: 20px;
+
+}
+.Chattop {
+background-color: #1D1D46;
+width: 350px ;
+color: white;
+text-align: center;
+margin: 0 auto;
+font-size: 18px;
+border-radius: 38px 38px 0 0;
+}
 
 .loader {
   width: 40px;
   aspect-ratio: 2;
-  --_g: no-repeat radial-gradient(circle closest-side,#5656b2 90%,#0000);
+  --_g: no-repeat radial-gradient(circle closest-side,#ffffff 90%,#0000);
   background:
     var(--_g) 0%   50%,
     var(--_g) 50%  50%,
@@ -118,3 +195,38 @@ button:hover{
     80%{background-position:0%  50%, 50%  50%,100% 100%}
 }
 
+.input-with-mic {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 1px solid #ccc; */
+  /* border: none;
+  border-radius: 40px; */
+
+
+}
+
+.mic-icon {
+  /* position: absolute; */
+  /* top: 10%; */
+  /* right: 50px; */
+  /* transform: translateY(-50%); */
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.mic-icon:hover {
+  color: #bec4df;
+}
+
+.input-field {
+  padding: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.agent {
+  color: #1D1D46;
+
+}
