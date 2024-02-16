@@ -40,23 +40,28 @@
   }
 
   button{
-    background-color: #c7c7ff;
-    color: #48489c;
-    margin-bottom: 10px;
-    border-radius: 10px;
     border: 0px;
     padding: 5px 14px;
+    background-color: #2637c7;
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
   }
 
   button:hover{
-    background-color: #48489c;
-    color: white;
+    /* background-color: #48489c;
+    color: white; */
+    background-color: #1d1d46;
+color: white;
   }
 
 .card-won{
   width: 15rem;
   /* background-color: #38a53b; */
-  background-color: #38a53b;
+  background-color: #05970c;
   color: rgb(239, 238, 238);
   cursor: pointer;
   transition: transform 0.3s ease-in-out;
@@ -104,6 +109,7 @@ full-calendar{
   padding-right: 0px;
   /* color: black; */
 }
+
 
 /* .fc-event {
   background-color: yellow;
