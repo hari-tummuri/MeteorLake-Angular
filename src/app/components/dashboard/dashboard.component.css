@@ -1,3 +1,4 @@
+
 .welcome{
     color: gray;
 }
@@ -21,17 +22,27 @@ a{
 }
 
 button{
-  background-color: #c7c7ff;
-  color: #48489c;
-  margin-bottom: 10px;
-  border-radius: 10px;
+  /* background-color: #4446bd;
+  color: white;
+  margin-bottom: 5px;
+  border-radius: 10px;*/
   border: 0px;
   padding: 5px 14px;
+  background-color: #2637c7;
+/* background-color: white; */
+/* color: #48489c; */
+color: white;
+text-align: center;
+font-size: 15px;
+margin-bottom: 10px;
+border-radius: 10px;
+cursor: pointer;
+/* width: 148%; */
 }
 
 button:hover{
-  background-color: #48489c;
-  color: white;
+  background-color: #1d1d46;
+color: white;
 }
 
 table{
