@@ -163,9 +163,14 @@ h3{
 }
 
 .summary{
-  padding-left: 35%;
+  /* padding-left: 35%; */
+  min-width: 80%;
 }
 
 .generating{
   padding-left: 15%;
+}
+
+.word{
+  word-wrap: break-word;
 }
