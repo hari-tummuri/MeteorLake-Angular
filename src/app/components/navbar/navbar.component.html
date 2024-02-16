@@ -39,23 +39,46 @@
       <h6>{{ currentDate | date : "fullDate" }}</h6>
     </span>
   </div>
-  <div class="col-3 d-flex justify-content-center">
-    <button
+  <div class="col-3 d-flex justify-content-center align-items-center">
+    <!-- <button type="submit" class="logout-button" (click)="logout()">
+      Logout
+    </button> -->
+    <img
+      src="{{ profileImage }}"
+      alt=""
+      style="height: 55px; width: 55px"
+      class="round-image mx-3"
+    />
+    <!-- <button
       type="submit"
       class="home-button mx-1"
       (click)="goToHome()"
       *ngIf="homeStatus"
     >
       Home
-    </button>
-    <button type="submit" class="logout-button" (click)="logout()">
-      Logout
-    </button>
-    <img
-      src="{{ profileImage }}"
-      alt=""
-      style="height: 60px"
-      class="round-image"
-    />
+    </button> -->
+    <!-- <a (click)="goToHome()" *ngIf="homeStatus" class="power-icon"
+      ><i class="bold-icon fa-solid fa-house"></i>
+      <p>Home</p></a
+    > -->
+    <div class="d-flex align-items-end">
+      <a
+        (click)="goToHome()"
+        *ngIf="homeStatus"
+        class="power-icon d-flex flex-column align-items-center top-padding"
+      >
+        <i class="bold-icon fa-solid fa-house"></i>
+        <p>Home</p>
+      </a>
+    </div>
+    <div class="d-flex align-items-end mx-3">
+      <a
+        (click)="logout()"
+        class="power-icon d-flex flex-column align-items-center top-padding"
+      >
+        <i class="fa-solid fa-power-off bold-icon"></i>
+        <p>Logout</p>
+      </a>
+    </div>
   </div>
 </div>
