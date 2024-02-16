@@ -1,51 +1,78 @@
-/* .row {  
-    height: 100%; 
-}  
-.image {  
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxDDoC4fKe2nMrvTqr4dmhjOHojDuBg6YdQ&usqp=CAU') no-repeat center center/contain; 
-    position: relative;  
-    height: 800px;
-} 
+::placeholder{
+  color:white;
+  padding-left: 15px;
+}
 
-.image::after {  
-    content: "";  
-    position: absolute;  
-    top: 0;  
-    left: 0;  
-    width: 100%;  
-    height: 100%;  
-    background: rgba(0, 0, 0, 0.5);  
-} 
+.para{
+  color:#252967;
+}
+.container-fluid{
+  background-color: white;
+  text-align: center;
+}
 
-.form-container {  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;  
-}  */
-
-.row {  
-    height: 100vh;  
-}  
-.image {  
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSxDDoC4fKe2nMrvTqr4dmhjOHojDuBg6YdQ&usqp=CAU') no-repeat center center/cover;  
-}  
-.form-container {  
-    display: flex;  
-    justify-content: center;  
-    align-items: center;
-    padding: 0%; 
-} 
-
+.col-6{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.row {
+  height: 100vh;
+}
 a{
-    text-decoration: none;
-    font-size: 12px;
+  color: lightgray;
+}
+.image {
+  background:url("https://github.com/Sriram-code/UI_Images/blob/main/MicrosoftTeams-image%20(31).png?raw=true");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 7%;
+  border-bottom-left-radius: 7%;
+  box-shadow: -10px 10px 25px 5px lightgrey;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0%;
+}
+h4, h5{
+  text-align: center;
+}
+input{
+border-radius: 10px;
+background-color: #00195A;
+width:90%;
+height:43px;
+color: white;
+/* padding: 0px 5px; */
+}
+a{
+  text-decoration: none;
+  font-size: 12px;
 }
 a:hover{
-    color: black;
+  color: black;
 }
 
 .buton{
-    padding-left: 130px;
-    padding-right: 130px;
-    border-radius: 50px;
+  padding-left: 130px;
+  padding-right: 130px;
+  border-radius: 50px;
+  background-color: #00195A;
+  width: 90%;
+  box-shadow: 8px 8px 8px 3px lightgrey;
+}
+.button:active {
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+u{
+  color: grey;
+  text-decoration: none;
+}
+
+u:hover{
+  color: black;
 }
