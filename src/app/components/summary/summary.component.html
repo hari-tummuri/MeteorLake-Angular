@@ -20,7 +20,7 @@
               type="file"
               id="file"
           /></a>
-          <h4>Upload files to generate summary</h4>
+          <p class="text-white">Upload .pdf files to generate summary</p>
           <input type="file" id="fileUpload" hidden />
           <!-- <button mat-raised-button color="accent" class="button" [disabled]="isUploading" (click)="fileInput.click()">
             <input hidden (change)="onFileSelected($event)" #fileInput type="file" id="file" />
@@ -35,18 +35,22 @@
           </div>
         </div>
         <!-- <div class="column" id="uploadedFiles"></div> -->
-        <div
-          class="box-gen d-flex align-items-center generating"
-          *ngIf="loading == true"
-        >
-          <h3>Generating summary&nbsp;</h3>
-          <div class="loader"></div>
-        </div>
-        <div class="box2" *ngIf="loading == false">
-          <div class="d-flex summary">
-            <h3>Summary</h3>
-            <div class="row px-3 py-2 text-white">
-              {{ summary }}
+        <div class="d-flex summary">
+          <div
+            class="box-gen d-flex align-items-center"
+            *ngIf="loading == true"
+          >
+            <h3>Generating summary&nbsp;</h3>
+            <div class="loader"></div>
+          </div>
+          <div class="box2" *ngIf="loading == false">
+            <div class="d-flex summary flex-column">
+              <h3 style="text-align: center">Summary</h3>
+              <div class="row px-3 py-2 text-white">
+                <p class="word">
+                  {{ summary }}
+                </p>
+              </div>
             </div>
           </div>
         </div>
