@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { DomSanitizer,SafeResourceUrl } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Agent } from 'src/app/AgentReply';
+import { Loadcase } from 'src/app/LoadCase';
+import { Question } from 'src/app/Question';
 import { CasesService } from 'src/app/services/cases.service';
 import { ChatService } from 'src/app/services/chat.service';
 // import { trigger, state, style, animate, transition } from '@angular/animations';
@@ -25,6 +27,7 @@ export class ChatComponent implements OnInit {
   urlSafe !: SafeResourceUrl;
   summary !: any;
   loading : boolean = false
+  caseId !: Loadcase
 
 
 
@@ -39,6 +42,8 @@ export class ChatComponent implements OnInit {
     // (<HTMLIFrameElement>document.getElementById('doc')).src = this.doc_path;
     // this.urlSafe= this.sanitizer.bypassSecurityTrustResourceUrl(this.doc_path);
     this.newpath = this.sanitizer.bypassSecurityTrustResourceUrl(this.doc_path);
+    this.caseId = {'caseId' : this.caseno }
+    this.loadCase(this.caseId)
     this.getSummaryByCaseno()
   }
 
@@ -52,18 +57,19 @@ export class ChatComponent implements OnInit {
   sendMessage() {
     this.messages.push({ user: "User", text: this.newMessage });
     this.loading = true
-    this.getReply(this.newMessage)
+    const query : Question = {'caseId': this.caseno, 'query': this.newMessage}
+    this.getReply(query)
     // this.messages.push({user : "Agent", text: this.agent})
 
     this.newMessage = "";
   }
 
-  getSummaryByCaseno(){
+  getSummaryByCaseno( ){
     this.summary = this.caseService.getSummaryStatic()
     console.log(this.summary);
 
   }
-  getReply(question : any){
+  getReply(question : Question){
     this.chatService.getReply(question).subscribe({
       next: (response: any) => {
         this.loading = false
@@ -85,5 +91,18 @@ export class ChatComponent implements OnInit {
   viewDocument(){
     // localStorage.setItem('sumDoc','document')
     this.sumDoc = 'document'
+  }
+
+  loadCase( caseId : Loadcase){
+    this.chatService.loadCase(caseId).subscribe({
+      next: (response : any ) =>{
+        console.log('case document loaded');
+
+      },
+      error: (error : any) =>{
+        console.log(error);
+
+      },
+    });
   }
 }

@@ -45,6 +45,8 @@ button:hover{
   /* margin-bottom: 10px; */
   /* background-color: #55658F; */
   border-radius: 10px 0 0 10px;
+  /* scrollbar-width: none;
+  -ms-overflow-style: none; */
 
 }
 .chat-history2 {
